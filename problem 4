@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Problem4 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int n;
+        int largest = 0;
+        int smallest = 0;
+        int count = 0;
+        double sum = 0;
+
+        while (true) {
+            n = input.nextInt();
+
+            if (n == 0) {
+                break;
+            }
+
+            if (count == 0) {
+                largest = n;
+                smallest = n;
+            } else {
+                if (n > largest) {
+                    largest = n;
+                }
+
+                if (n < smallest) {
+                    smallest = n;
+                }
+            }
+
+            sum += n;
+            count++;
+        }
+
+        if (count > 0) {
+            System.out.println("Largest = " + largest);
+            System.out.println("Smallest = " + smallest);
+            System.out.println("Average = " + (sum / count));
+        } else {
+            System.out.println("No numbers were entered.");
+        }
+
+        input.close();
+    }
+}
